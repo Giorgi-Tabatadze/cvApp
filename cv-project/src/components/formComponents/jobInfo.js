@@ -2,47 +2,64 @@
 /* eslint-disable react/prefer-stateless-function */
 /* eslint-disable react/prop-types */
 import React from "react";
+import LongAnswer from "./longAnswer";
 import ShortAnswer from "./shortAnswer";
 
-class EducationInfo extends React.Component {
+class JobInfo extends React.Component {
   render() {
-    const { school, title, dateFrom, dateTo, handleChange, itemNumber } =
-      this.props;
+    const {
+      company,
+      position,
+      tasks,
+      dateFrom,
+      dateTo,
+      handleChange,
+      itemNumber,
+    } = this.props;
 
     return (
       <div className="section">
-        <h2>Education Information</h2>
         <ShortAnswer
-          labelText="School Name: "
-          name="school"
-          section="education"
+          labelText="Company Name: "
+          name="company"
+          section="job"
           itemNumber={itemNumber}
           type="text"
           handleChange={handleChange}
-          value={school}
+          value={company}
         />
+
         <ShortAnswer
-          labelText="Course name: "
-          name="title"
-          section="education"
+          labelText="Position: "
+          name="position"
+          section="job"
           itemNumber={itemNumber}
           type="text"
           handleChange={handleChange}
-          value={title}
+          value={position}
+        />
+        <LongAnswer
+          labelText="Main Tasks: "
+          name="tasks"
+          section="job"
+          itemNumber={itemNumber}
+          type="text"
+          handleChange={handleChange}
+          value={tasks}
         />
         <ShortAnswer
-          labelText="Started Studying: "
+          labelText="Started Working: "
           name="dateFrom"
-          section="education"
+          section="job"
           itemNumber={itemNumber}
           type="date"
           handleChange={handleChange}
           value={dateFrom}
         />
         <ShortAnswer
-          labelText="Finished Studying: "
+          labelText="Finished Working: "
           name="dateTo"
-          section="education"
+          section="job"
           itemNumber={itemNumber}
           type="date"
           handleChange={handleChange}
@@ -52,4 +69,4 @@ class EducationInfo extends React.Component {
     );
   }
 }
-export default EducationInfo;
+export default JobInfo;

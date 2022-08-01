@@ -9,7 +9,6 @@ class GeneralInfo extends React.Component {
 
     return (
       <div className="section">
-        <h2>General Information</h2>
         <ShortAnswer
           labelText="Full Name: "
           name="name"

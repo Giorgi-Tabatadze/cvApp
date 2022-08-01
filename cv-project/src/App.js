@@ -1,8 +1,9 @@
 /* eslint-disable react/no-access-state-in-setstate */
 /* eslint-disable react/destructuring-assignment */
 import React from "react";
-import GeneralInfo from "./components/generalInfo";
-import EducationInfo from "./components/educationInfo";
+import GeneralInfo from "./components/formComponents/generalInfo";
+import EducationInfo from "./components/formComponents/educationInfo";
+import JobInfo from "./components/formComponents/jobInfo";
 
 class App extends React.Component {
   constructor(props) {
@@ -11,7 +12,9 @@ class App extends React.Component {
       info: {
         general: [{ name: "", email: "", phone: "", birth: "" }],
         education: [{ school: "", title: "", dateFrom: "", dateTo: "" }],
-        job: {},
+        job: [
+          { company: "", position: "", tasks: "", dateFrom: "", dateTo: "" },
+        ],
       },
     };
 
@@ -68,6 +71,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <form>
+          <h2>General Information</h2>
           {this.state.info.general.map((item, index) => (
             <GeneralInfo
               handleChange={this.handleChange}
@@ -79,7 +83,7 @@ class App extends React.Component {
               birth={item.birth}
             />
           ))}
-          {console.log(this.state.info)};
+          <h2>Education Information</h2>
           {this.state.info.education.map((item, index) => (
             <EducationInfo
               handleChange={this.handleChange}
@@ -98,6 +102,24 @@ class App extends React.Component {
           >
             Add Education
           </button>
+          <h2>Job Experiance</h2>
+          {this.state.info.job.map((item, index) => (
+            <JobInfo
+              handleChange={this.handleChange}
+              itemNumber={index}
+              // eslint-disable-next-line react/no-array-index-key
+              company={item.company}
+              position={item.position}
+              tasks={item.tasks}
+              dateFrom={item.dateFrom}
+              dateTo={item.dateTo}
+            />
+          ))}
+          <button type="button" data-section="job" onClick={this.addNewSection}>
+            Add Workplace
+          </button>
+
+          <button type="submit">submit</button>
         </form>
       </div>
     );
