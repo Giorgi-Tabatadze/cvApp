@@ -4,6 +4,8 @@
   font-family: "Open Sans", sans-serif;
 }
 body {
+  padding: 0;
+  margin: 0;
   background-color: #2f8f9d;
 }
 
@@ -36,6 +38,12 @@ h2 {
 h3 {
   margin: 0;
 }
+h4 {
+  margin: 0;
+}
+p {
+  margin: 0;
+}
 
 .part {
   background-color: white;
@@ -59,6 +67,9 @@ h3 {
 
 .section {
   margin-bottom: 30px;
+}
+.section button {
+  margin-top: 10px;
 }
 
 .short-answer,
@@ -86,4 +97,23 @@ button {
 button:hover {
   cursor: pointer;
   border: 1px solid #2f8f9d;
+}
+.modify {
+  padding: 10px 20px;
+  font-size: 23px;
+  width: 55vw;
+}
+.part h2 {
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid rgb(154, 154, 154);
+}
+label {
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+.example {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: 600;
 }

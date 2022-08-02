@@ -1,0 +1,57 @@
+.view {
+  background-color: rgb(225, 225, 225);
+}
+.cv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.cv-container {
+  width: 60vw;
+  -webkit-box-shadow: 0px 0px 19px 3px rgba(120, 120, 120, 1);
+  -moz-box-shadow: 0px 0px 19px 3px rgba(120, 120, 120, 1);
+  box-shadow: 0px 0px 19px 3px rgba(120, 120, 120, 1);
+  margin-bottom: 10px;
+}
+.cv-text {
+  padding: 30px 50px;
+  background-color: #ffffff;
+}
+.cv-general {
+  background-color: #2f8f9d;
+  color: white;
+  padding: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+.cv-general h1 {
+  font-size: 45px;
+}
+.cv-contact p {
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  text-align: end;
+}
+.cv-contact span {
+  font-weight: 700;
+}
+.component {
+  margin-bottom: 40px;
+}
+.component h2 {
+  padding-bottom: 10px;
+  border-bottom: 2px solid rgb(154, 154, 154);
+}
+.component p,
+.component h4 {
+  margin-top: 10px;
+}
+.bold-text {
+  font-weight: 700;
+}
+.cv-skill-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
