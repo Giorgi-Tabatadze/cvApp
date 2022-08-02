@@ -8,11 +8,10 @@ class ShortAnswer extends React.Component {
       this.props;
 
     return (
-      <div>
-        <label htmlFor={name}>{labelText}</label>
+      <div className="short-answer">
+        <label htmlFor={`${section}${name}${itemNumber}`}>{labelText}</label>
         <input
-          id={name}
-          className="short-answer"
+          id={`${section}${name}${itemNumber}`}
           type={type}
           data-name={name}
           data-section={section}

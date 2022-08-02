@@ -8,11 +8,10 @@ class LongAnswer extends React.Component {
       this.props;
 
     return (
-      <div>
-        <label htmlFor={name}>{labelText}</label>
+      <div className="long-answer">
+        <label htmlFor={`${section}${name}${itemNumber}`}>{labelText}</label>
         <textarea
-          id={name}
-          className="long-answer"
+          id={`${section}${name}${itemNumber}`}
           data-name={name}
           data-section={section}
           data-number={itemNumber}

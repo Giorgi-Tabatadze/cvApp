@@ -20,15 +20,6 @@ class GeneralInfo extends React.Component {
           handleChange={handleChange}
           value={name}
         />
-        <ShortAnswer
-          labelText="Full Name: "
-          name="name"
-          section="general"
-          itemNumber={itemNumber}
-          type="text"
-          handleChange={handleChange}
-          value={name}
-        />
 
         <ShortAnswer
           labelText="Email: "

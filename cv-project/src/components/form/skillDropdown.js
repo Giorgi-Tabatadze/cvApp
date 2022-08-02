@@ -18,10 +18,10 @@ class SkillDropdown extends React.Component {
     } = this.props;
 
     return (
-      <div>
-        <label htmlFor={name}>{labelText}</label>
+      <div className="skills">
+        <label htmlFor={`${section}${name}${itemNumber}`}>{labelText}</label>
         <input
-          id={name}
+          id={`${section}${name}${itemNumber}`}
           className="short-answer"
           type={type}
           data-name={name}
@@ -30,10 +30,12 @@ class SkillDropdown extends React.Component {
           onChange={handleChange}
           value={value}
         />
-        <label htmlFor={selectName}>{selectLabelText}</label>
+        <label htmlFor={`${section}${selectName}${itemNumber}`}>
+          {selectLabelText}
+        </label>
         <select
           value={selectValue}
-          id={selectName}
+          id={`${section}${selectName}${itemNumber}`}
           className="dropdown"
           onChange={handleChange}
           data-name={selectName}

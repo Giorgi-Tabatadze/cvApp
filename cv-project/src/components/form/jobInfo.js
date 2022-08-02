@@ -59,7 +59,7 @@ class JobInfo extends React.Component {
           value={dateFrom}
         />
         <ShortAnswer
-          labelText="Finished Working: "
+          labelText="Finished Working (Leave clear if still working): "
           name="dateTo"
           section="job"
           itemNumber={itemNumber}
