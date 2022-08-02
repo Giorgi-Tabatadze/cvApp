@@ -2,10 +2,12 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 import ShortAnswer from "./shortAnswer";
+import LongAnswer from "./longAnswer";
 
 class GeneralInfo extends React.Component {
   render() {
-    const { name, email, phone, birth, handleChange, itemNumber } = this.props;
+    const { name, email, phone, birth, about, handleChange, itemNumber } =
+      this.props;
 
     return (
       <div className="section">
@@ -54,6 +56,15 @@ class GeneralInfo extends React.Component {
           type="date"
           handleChange={handleChange}
           value={birth}
+        />
+        <LongAnswer
+          labelText="About me: "
+          name="about"
+          section="general"
+          itemNumber={itemNumber}
+          type="text"
+          handleChange={handleChange}
+          value={about}
         />
       </div>
     );

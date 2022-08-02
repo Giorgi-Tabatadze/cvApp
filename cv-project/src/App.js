@@ -1,20 +1,24 @@
 /* eslint-disable react/no-access-state-in-setstate */
 /* eslint-disable react/destructuring-assignment */
 import React from "react";
-import GeneralInfo from "./components/formComponents/generalInfo";
-import EducationInfo from "./components/formComponents/educationInfo";
-import JobInfo from "./components/formComponents/jobInfo";
+import GeneralInfo from "./components/form/generalInfo";
+import EducationInfo from "./components/form/educationInfo";
+import JobInfo from "./components/form/jobInfo";
+import SkillInfo from "./components/form/skillInfo";
+import LanguageInfo from "./components/form/languageinfo";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       info: {
-        general: [{ name: "", email: "", phone: "", birth: "" }],
+        general: [{ name: "", email: "", phone: "", birth: "", about: "" }],
         education: [{ school: "", title: "", dateFrom: "", dateTo: "" }],
         job: [
           { company: "", position: "", tasks: "", dateFrom: "", dateTo: "" },
         ],
+        skills: [{ name: "", level: "Begginer" }],
+        languages: [{ name: "", level: "No Proficiency" }],
       },
     };
 
@@ -81,6 +85,7 @@ class App extends React.Component {
               email={item.email}
               phone={item.phone}
               birth={item.birth}
+              about={item.about}
             />
           ))}
           <h2>Education Information</h2>
@@ -117,6 +122,42 @@ class App extends React.Component {
           ))}
           <button type="button" data-section="job" onClick={this.addNewSection}>
             Add Workplace
+          </button>
+          <h2>Skills</h2>
+
+          {this.state.info.skills.map((item, index) => (
+            <SkillInfo
+              handleChange={this.handleChange}
+              itemNumber={index}
+              // eslint-disable-next-line react/no-array-index-key
+              name={item.name}
+              level={item.level}
+            />
+          ))}
+          <button
+            type="button"
+            data-section="skills"
+            onClick={this.addNewSection}
+          >
+            Add Another Skill
+          </button>
+          <h2>Languages</h2>
+
+          {this.state.info.languages.map((item, index) => (
+            <LanguageInfo
+              handleChange={this.handleChange}
+              itemNumber={index}
+              // eslint-disable-next-line react/no-array-index-key
+              name={item.name}
+              level={item.level}
+            />
+          ))}
+          <button
+            type="button"
+            data-section="languages"
+            onClick={this.addNewSection}
+          >
+            Add Another Language
           </button>
 
           <button type="submit">submit</button>
