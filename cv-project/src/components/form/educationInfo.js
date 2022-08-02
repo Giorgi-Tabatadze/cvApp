@@ -47,7 +47,7 @@ class EducationInfo extends React.Component {
           value={dateFrom}
         />
         <ShortAnswer
-          labelText="Finished Studying(Leave clear if still studying): "
+          labelText="Finished Studying (Leave clear if its ongoing): "
           name="dateTo"
           section="education"
           itemNumber={itemNumber}
