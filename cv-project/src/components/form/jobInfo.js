@@ -4,6 +4,7 @@
 import React from "react";
 import LongAnswer from "./longAnswer";
 import ShortAnswer from "./shortAnswer";
+import DeleteButton from "./deleteButton";
 
 class JobInfo extends React.Component {
   render() {
@@ -14,6 +15,7 @@ class JobInfo extends React.Component {
       dateFrom,
       dateTo,
       handleChange,
+      handleDelete,
       itemNumber,
     } = this.props;
 
@@ -64,6 +66,11 @@ class JobInfo extends React.Component {
           type="date"
           handleChange={handleChange}
           value={dateTo}
+        />
+        <DeleteButton
+          section="job"
+          itemNumber={itemNumber}
+          onClick={handleDelete}
         />
       </div>
     );

@@ -3,11 +3,19 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 import ShortAnswer from "./shortAnswer";
+import DeleteButton from "./deleteButton";
 
 class EducationInfo extends React.Component {
   render() {
-    const { school, title, dateFrom, dateTo, handleChange, itemNumber } =
-      this.props;
+    const {
+      school,
+      title,
+      dateFrom,
+      dateTo,
+      handleChange,
+      handleDelete,
+      itemNumber,
+    } = this.props;
 
     return (
       <div className="section">
@@ -46,6 +54,11 @@ class EducationInfo extends React.Component {
           type="date"
           handleChange={handleChange}
           value={dateTo}
+        />
+        <DeleteButton
+          section="education"
+          itemNumber={itemNumber}
+          onClick={handleDelete}
         />
       </div>
     );

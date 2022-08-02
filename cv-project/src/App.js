@@ -25,6 +25,7 @@ class App extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.addNewSection = this.addNewSection.bind(this);
     this.resetItemData = this.resetItemData.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   handleChange(event) {
@@ -43,6 +44,22 @@ class App extends React.Component {
               newItem[stateToChange] = value;
             }
             return newItem;
+          },
+        ),
+      },
+    });
+  }
+
+  handleDelete(event) {
+    const sectionToChange = event.target.dataset.section;
+    const itemNumber = event.target.dataset.number;
+    this.setState({
+      info: {
+        ...this.state.info,
+        [sectionToChange]: this.state.info[sectionToChange].filter(
+          (item, index) => {
+            const itemN = Number(itemNumber);
+            return itemN !== index;
           },
         ),
       },
@@ -92,6 +109,7 @@ class App extends React.Component {
           {this.state.info.education.map((item, index) => (
             <EducationInfo
               handleChange={this.handleChange}
+              handleDelete={this.handleDelete}
               itemNumber={index}
               // eslint-disable-next-line react/no-array-index-key
               school={item.school}
@@ -111,6 +129,7 @@ class App extends React.Component {
           {this.state.info.job.map((item, index) => (
             <JobInfo
               handleChange={this.handleChange}
+              handleDelete={this.handleDelete}
               itemNumber={index}
               // eslint-disable-next-line react/no-array-index-key
               company={item.company}
@@ -128,6 +147,7 @@ class App extends React.Component {
           {this.state.info.skills.map((item, index) => (
             <SkillInfo
               handleChange={this.handleChange}
+              handleDelete={this.handleDelete}
               itemNumber={index}
               // eslint-disable-next-line react/no-array-index-key
               name={item.name}
@@ -146,6 +166,7 @@ class App extends React.Component {
           {this.state.info.languages.map((item, index) => (
             <LanguageInfo
               handleChange={this.handleChange}
+              handleDelete={this.handleDelete}
               itemNumber={index}
               // eslint-disable-next-line react/no-array-index-key
               name={item.name}

@@ -3,10 +3,11 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 import SkillDropdown from "./skillDropdown";
+import DeleteButton from "./deleteButton";
 
 class SkillInfo extends React.Component {
   render() {
-    const { name, level, handleChange, itemNumber } = this.props;
+    const { name, level, handleChange, handleDelete, itemNumber } = this.props;
 
     return (
       <div className="section">
@@ -21,6 +22,11 @@ class SkillInfo extends React.Component {
           selectLabelText="Level: "
           section="skills"
           itemNumber={itemNumber}
+        />
+        <DeleteButton
+          section="skills"
+          itemNumber={itemNumber}
+          onClick={handleDelete}
         />
       </div>
     );
